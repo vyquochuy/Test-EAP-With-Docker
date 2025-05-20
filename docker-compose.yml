@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  freeradius:
+    image: freeradius/freeradius-server:latest
+    container_name: freeradius
+    ports:
+      - "1812:1812/udp"
+      - "1813:1813/udp"
+    volumes:
+      - ./radius-config:/etc/freeradius/3.0
+    networks:
+      eap-net:
+        ipv4_address: 172.20.0.2
+    command: ["-X"]
+
+  hostapd:
+    image: networkboot/hostapd:latest
+    container_name: hostapd
+    cap_add:
+      - NET_ADMIN
+    networks:
+      eap-net:
+        ipv4_address: 172.20.0.3
+    volumes:
+      - ./hostapd/hostapd.conf:/etc/hostapd/hostapd.conf
+    command: hostapd -dd /etc/hostapd/hostapd.conf
+
+  supplicant:
+    image: freedombsd/wpa_supplicant:latest
+    container_name: supplicant
+    cap_add:
+      - NET_ADMIN
+    networks:
+      eap-net:
+        ipv4_address: 172.20.0.4
+    volumes:
+      - ./supplicant/wpa_supplicant.conf:/etc/wpa_supplicant/wpa_supplicant.conf
+    command: wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -i wlan0
+
+  strongswan:
+    image: strongswan:latest
+    container_name: strongswan
+    privileged: true
+    ports:
+      - "500:500/udp"
+      - "4500:4500/udp"
+    volumes:
+      - ./strongswan/ipsec.conf:/etc/ipsec.conf
+      - ./strongswan/ipsec.secrets:/etc/ipsec.secrets
+    networks:
+      eap-net:
+        ipv4_address: 172.20.0.5
+    command: ["ipsec", "start", "--nofork"]
+
+networks:
+  eap-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
