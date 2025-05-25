@@ -1,0 +1,84 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            d4:2a:21:04:e5:16:ef:eb:31:88:34:4b:8c:f9:cb:d5
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=AWASLab
+        Validity
+            Not Before: Aug 19 19:12:56 2021 GMT
+            Not After : Nov 22 19:12:56 2023 GMT
+        Subject: CN=pc
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b9:74:06:e2:7c:05:02:f5:6e:2e:25:77:82:6d:
+                    d3:b2:bb:0d:ee:4d:c4:0b:bc:48:c2:7f:08:ee:be:
+                    f3:55:a8:a5:a5:3a:c9:7e:ba:ba:3a:fe:e2:0e:d8:
+                    f9:00:8a:e5:29:57:a0:f4:df:9e:10:a5:36:48:c7:
+                    5f:a6:a4:80:40:5e:a1:bb:c9:0b:66:4e:aa:0c:59:
+                    34:fc:df:47:e7:2d:c9:78:78:91:5c:2b:86:9b:1e:
+                    c5:e5:01:5a:b6:6c:04:f3:c2:f1:f0:d4:71:9d:45:
+                    50:68:bd:2d:b8:f6:4a:23:2b:fe:d6:85:80:85:6e:
+                    62:94:ff:8c:19:99:30:25:23:be:b6:bd:ed:09:09:
+                    73:27:ed:ee:ec:82:85:1c:42:b1:90:d0:79:16:92:
+                    bc:31:fe:9c:2c:0f:39:de:25:7d:c4:59:b8:42:90:
+                    66:f2:7d:ff:ae:2f:30:e1:90:73:90:76:c5:56:63:
+                    4c:c8:5e:23:ac:5a:68:92:66:dc:76:e6:c0:ef:b3:
+                    e5:9d:c8:82:4c:cb:3a:d0:9a:28:2b:dc:be:d6:79:
+                    c4:a8:e2:11:0a:82:4c:d8:a2:21:99:b3:4f:9e:64:
+                    20:10:35:3f:88:1c:63:a8:4d:1b:98:d4:31:fe:18:
+                    e1:e6:4c:28:fb:3c:03:2b:81:31:8b:2d:4c:22:47:
+                    4e:35
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                A4:DC:75:BC:AA:A8:A4:E0:EA:84:91:9F:A5:13:42:37:18:FC:09:91
+            X509v3 Authority Key Identifier: 
+                keyid:E1:3B:EF:DC:90:1F:D9:47:4F:01:39:9F:18:BC:15:4F:5B:08:1B:2B
+                DirName:/CN=AWASLab
+                serial:31:0A:C5:1E:1E:5C:BA:7D:33:C9:C4:96:CC:FE:CE:44:05:54:AA:1D
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+    Signature Algorithm: sha256WithRSAEncryption
+         96:b4:fb:4a:b0:be:ee:4e:a9:14:e5:00:eb:e1:c6:cd:7a:24:
+         b0:f7:09:92:74:ab:9e:cf:6c:6d:e1:31:7a:c3:7c:00:b0:b7:
+         eb:43:09:e1:a4:d7:05:4e:5f:a8:b4:fe:24:47:ce:e0:f8:e3:
+         a0:7f:ec:5c:85:20:25:ce:d0:c1:ad:3d:9d:fa:fe:5f:c6:5f:
+         28:77:f3:4e:ac:b1:fc:f2:ce:c4:9f:53:c3:42:85:f8:aa:d7:
+         00:4d:5b:bb:c9:b3:dd:62:18:58:0c:fb:af:50:63:5a:61:34:
+         d9:a2:eb:99:54:6a:4f:1f:d0:37:cc:15:1e:47:87:89:f5:63:
+         d8:a5:6d:5d:03:97:a8:af:5a:8f:12:7b:38:95:e8:61:42:80:
+         08:f8:7c:96:50:46:41:63:78:4c:a8:8d:0f:73:a7:37:23:c9:
+         3b:c0:2e:dd:67:ec:e0:70:f8:ea:d2:bc:18:a3:d9:c3:f1:a1:
+         9b:44:47:79:48:68:4d:23:da:3e:37:cd:4c:23:bd:d7:e9:71:
+         8b:34:d1:56:44:19:c7:4d:2b:ec:55:06:03:cd:bd:57:04:49:
+         f7:7c:30:20:99:cd:6f:29:1c:64:7e:cb:e8:71:cd:ec:ea:f7:
+         ac:5b:a4:89:c8:59:ef:b7:bf:bb:37:25:0d:19:09:d2:02:e1:
+         a3:3a:b8:62
+-----BEGIN CERTIFICATE-----
+MIIDSTCCAjGgAwIBAgIRANQqIQTlFu/rMYg0S4z5y9UwDQYJKoZIhvcNAQELBQAw
+EjEQMA4GA1UEAwwHQVdBU0xhYjAeFw0yMTA4MTkxOTEyNTZaFw0yMzExMjIxOTEy
+NTZaMA0xCzAJBgNVBAMMAnBjMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+AQEAuXQG4nwFAvVuLiV3gm3TsrsN7k3EC7xIwn8I7r7zVailpTrJfrq6Ov7iDtj5
+AIrlKVeg9N+eEKU2SMdfpqSAQF6hu8kLZk6qDFk0/N9H5y3JeHiRXCuGmx7F5QFa
+tmwE88Lx8NRxnUVQaL0tuPZKIyv+1oWAhW5ilP+MGZkwJSO+tr3tCQlzJ+3u7IKF
+HEKxkNB5FpK8Mf6cLA853iV9xFm4QpBm8n3/ri8w4ZBzkHbFVmNMyF4jrFpokmbc
+dubA77PlnciCTMs60JooK9y+1nnEqOIRCoJM2KIhmbNPnmQgEDU/iBxjqE0bmNQx
+/hjh5kwo+zwDK4Exiy1MIkdONQIDAQABo4GeMIGbMAkGA1UdEwQCMAAwHQYDVR0O
+BBYEFKTcdbyqqKTg6oSRn6UTQjcY/AmRME0GA1UdIwRGMESAFOE779yQH9lHTwE5
+nxi8FU9bCBsroRakFDASMRAwDgYDVQQDDAdBV0FTTGFighQxCsUeHly6fTPJxJbM
+/s5EBVSqHTATBgNVHSUEDDAKBggrBgEFBQcDAjALBgNVHQ8EBAMCB4AwDQYJKoZI
+hvcNAQELBQADggEBAJa0+0qwvu5OqRTlAOvhxs16JLD3CZJ0q57PbG3hMXrDfACw
+t+tDCeGk1wVOX6i0/iRHzuD446B/7FyFICXO0MGtPZ36/l/GXyh3806ssfzyzsSf
+U8NChfiq1wBNW7vJs91iGFgM+69QY1phNNmi65lUak8f0DfMFR5Hh4n1Y9ilbV0D
+l6ivWo8SeziV6GFCgAj4fJZQRkFjeEyojQ9zpzcjyTvALt1n7OBw+OrSvBij2cPx
+oZtER3lIaE0j2j43zUwjvdfpcYs00VZEGcdNK+xVBgPNvVcESfd8MCCZzW8pHGR+
+y+hxzezq96xbpInIWe+3v7s3JQ0ZCdIC4aM6uGI=
+-----END CERTIFICATE-----

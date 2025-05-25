@@ -1,0 +1,28 @@
+eap {
+
+	default_eap_type = ttls
+
+	tls-config tls-common {
+
+		private_key_password = "symbol"
+		private_key_file = ${certdir}/server.key
+		certificate_file = ${certdir}/server.crt
+		ca_file = ${cadir}/ca.crt
+		dh_file = ${certdir}/dh.pem
+		ca_path = ${cadir}
+		cipher_list = "HIGH"
+		ecdh_curve = "secp384r1"
+
+		verify {
+			tmpdir = /tmp/radiusd
+			client = "/usr/bin/openssl verify -CAfile ${..ca_file} %{TLS-Client-Cert-Filename}"
+		}
+
+	}
+
+	ttls {
+		tls = tls-common
+		virtual_server = "inner-tunnel"
+	}
+
+}

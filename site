@@ -1,0 +1,42 @@
+server site {
+
+listen {
+	type = auth
+	ipaddr = *
+	port = 0
+	limit {
+		max_connections = 16
+		lifetime = 0
+		idle_timeout = 30
+	}
+}
+
+listen {
+	type = auth
+	ipv6addr = ::
+	port = 0
+	limit {
+		max_connections = 16
+		lifetime = 0
+		idle_timeout = 30
+	}
+}
+
+authorize {
+	eap {
+		ok = return
+		updated = return
+	}
+	expiration
+	logintime
+}
+
+authenticate {
+	eap
+}
+
+session {
+}
+
+
+}
