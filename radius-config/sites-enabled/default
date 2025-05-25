@@ -1,0 +1,15 @@
+authorize {
+    ...
+    eap
+    gpsk
+    ...
+}
+
+authenticate {
+    ...
+    Auth-Type GPSK {
+        gpsk
+    }
+    eap
+    ...
+}

@@ -1,26 +1,16 @@
 eap {
-  default_eap_type = tls
-  timer_expire     = 60
-  # … giữ nguyên chung …
+    default_eap_type = tls
+    timer_expire = 60
+    ignore_unknown_eap_types = no
+    
+    tls {
+        tls = tls-common
+    }
+}
 
-  tls {
-    private_key_file = ${certdir}/server.key
-    certificate_file = ${certdir}/server.crt
-    ca_file          = ${certdir}/ca.pem
-    # client cert bắt buộc
-    check_cert       = yes
-    # …
-  }
-
-  gpsk {
-    # bật GPSK
-    pmk_length = 32
-    # secret mặc định (thư mục users sẽ match)
-    shared_secret = "gpsksecret"
-  }
-
-  # disable các method khác nếu không dùng
-  ttls { disable = yes }
-  peap { disable = yes }
-  ikev2 { disable = yes }
+tls-config tls-common {
+    private_key_file = /etc/freeradius/3.0/certs/server.key
+    certificate_file = /etc/freeradius/3.0/certs/server.crt
+    ca_file = /etc/freeradius/3.0/certs/ca.crt
+    cipher_list = "HIGH"
 }

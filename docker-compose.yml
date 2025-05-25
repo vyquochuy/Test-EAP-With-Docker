@@ -7,56 +7,7 @@ services:
       - "1812:1812/udp"
       - "1813:1813/udp"
     volumes:
-      - ./radius-config/mods-enabled:/etc/freeradius/3.0/mods-enabled
-      - ./radius-config/clients.conf:/etc/freeradius/3.0/clients.conf
-      - ./radius-config/users:/etc/freeradius/3.0/users
-      - ./radius-config/certs:/etc/freeradius/3.0/certs
-    networks:
-      eap-net:
-        ipv4_address: 172.20.0.2
+      - ./radius-config:/etc/freeradius/3.0
     command: ["-X"]
-
-  hostapd:
-    image: local/hostapd
-    container_name: hostapd
-    cap_add:
-      - NET_ADMIN
-    volumes:
-      - ./hostapd/hostapd.conf:/etc/hostapd/hostapd.conf
-    networks:
-      eap-net:
-        ipv4_address: 172.20.0.3
-
-  supplicant:
-    image: local/supplicant
-    container_name: supplicant
-    cap_add:
-      - NET_ADMIN
-    volumes:
-      - ./supplicant/wpa_supplicant.conf:/etc/wpa_supplicant/wpa_supplicant.conf
-      - ./radius-config/certs:/etc/wpa_supplicant/certs
-    networks:
-      eap-net:
-        ipv4_address: 172.20.0.4
-        
-
-  # strongswan:
-  #   image: quay.io/strongswan/strongswan:latest
-  #   container_name: strongswan
-  #   privileged: true
-  #   ports:
-  #     - "500:500/udp"
-  #     - "4500:4500/udp"
-  #   volumes:
-  #     - ./strongswan/ipsec.conf:/etc/ipsec.conf
-  #     - ./strongswan/ipsec.secrets:/etc/ipsec.secrets
-  #   networks:
-  #     eap-net:
-  #       ipv4_address: 172.20.0.5
-
-networks:
-  eap-net:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
+    environment:
+      - "FREERADIUS_LOG_LEVEL=info"

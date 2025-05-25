@@ -1,1 +1,2 @@
 alice Cleartext-Password := "alicepw"
+user1 Cleartext-Password := "pass123"

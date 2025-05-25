@@ -1,0 +1,8 @@
+gpsk {
+    clients = {
+        # identity = PSK (hex)
+        gpskclient = 11223344556677889900aabbccddeeff
+    }
+    group = "default"
+    rewrite_identity = no
+}
