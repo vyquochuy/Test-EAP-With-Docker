@@ -1,8 +1,8 @@
 SOURCE FROM: https://github.com/tknv/docker-freeradius-eap-ttls
 
 ```bash
-docker-compose up -d
-docker-compose up -build
+docker-compose up --build
+docker-compose up 
 eapol_test -c ttls-pap.conf -a 127.0.0.1 -p 1812 -s symbol123
 ```
 ## WARNING
