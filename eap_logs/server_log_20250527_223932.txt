@@ -1,0 +1,89 @@
+=== FreeRADIUS Server Log (radius-eap-ttls) ===
+idle_timeout = 30
+minimum_timeout = 60
+timeout = 10
+net_timeout = 1
+res_timeout = 10
+# Linked to sub-module rlm_eap_ttls
+timeout = 0
+idle_timeout = 60
+idle_timeout = 30
+idle_timeout = 30
+(0) Received Access-Request Id 0 from 172.22.0.1:58686 to 172.22.0.4:1812 length 150
+(0) eap: Calling submodule eap_ttls to process data
+(0) eap_ttls: Initiating new EAP-TLS session
+(0) eap_ttls: [eaptls start] = request
+(1) Received Access-Request Id 1 from 172.22.0.1:58686 to 172.22.0.4:1812 length 335
+(1) eap: Calling submodule eap_ttls to process data
+(1) eap_ttls: Authenticate
+(1) eap_ttls: Continuing EAP-TLS
+(1) eap_ttls: Got final TLS record fragment (184 bytes)
+(1) eap_ttls: WARNING: Total received TLS record fragments (184 bytes), does not equal indicated TLS record length (0 bytes)
+(1) eap_ttls: [eaptls verify] = ok
+(1) eap_ttls: Done initial handshake
+(1) eap_ttls: (other): before/accept initialization
+(1) eap_ttls: TLS_accept: before/accept initialization
+(1) eap_ttls: <<< recv TLS 1.2  [length 00b3]
+(1) eap_ttls: TLS_accept: SSLv3 read client hello A
+(1) eap_ttls: >>> send TLS 1.2  [length 0037]
+(1) eap_ttls: TLS_accept: SSLv3 write server hello A
+(1) eap_ttls: >>> send TLS 1.2  [length 06b3]
+(1) eap_ttls: TLS_accept: SSLv3 write certificate A
+(1) eap_ttls: >>> send TLS 1.2  [length 016d]
+(1) eap_ttls: TLS_accept: SSLv3 write key exchange A
+(1) eap_ttls: >>> send TLS 1.2  [length 0004]
+(1) eap_ttls: TLS_accept: SSLv3 write server done A
+(1) eap_ttls: TLS_accept: SSLv3 flush data
+(1) eap_ttls: TLS_accept: SSLv3 read client certificate A
+(1) eap_ttls: TLS_accept: Need to read more data: SSLv3 read client key exchange A
+(1) eap_ttls: In SSL Handshake Phase
+(1) eap_ttls: In SSL Accept mode
+(1) eap_ttls: [eaptls process] = handled
+(2) Received Access-Request Id 2 from 172.22.0.1:58686 to 172.22.0.4:1812 length 151
+(2) eap: Calling submodule eap_ttls to process data
+(2) eap_ttls: Authenticate
+(2) eap_ttls: Continuing EAP-TLS
+(2) eap_ttls: Peer ACKed our handshake fragment
+(2) eap_ttls: [eaptls verify] = request
+(2) eap_ttls: [eaptls process] = handled
+(3) Received Access-Request Id 3 from 172.22.0.1:58686 to 172.22.0.4:1812 length 151
+(3) eap: Calling submodule eap_ttls to process data
+(3) eap_ttls: Authenticate
+(3) eap_ttls: Continuing EAP-TLS
+(3) eap_ttls: Peer ACKed our handshake fragment
+(3) eap_ttls: [eaptls verify] = request
+(3) eap_ttls: [eaptls process] = handled
+(4) Received Access-Request Id 4 from 172.22.0.1:58686 to 172.22.0.4:1812 length 309
+(4) eap: Calling submodule eap_ttls to process data
+(4) eap_ttls: Authenticate
+(4) eap_ttls: Continuing EAP-TLS
+(4) eap_ttls: [eaptls verify] = ok
+(4) eap_ttls: Done initial handshake
+(4) eap_ttls: <<< recv TLS 1.2  [length 0066]
+(4) eap_ttls: TLS_accept: SSLv3 read client key exchange A
+(4) eap_ttls: <<< recv TLS 1.2  [length 0001]
+(4) eap_ttls: <<< recv TLS 1.2  [length 0010]
+(4) eap_ttls: TLS_accept: SSLv3 read finished A
+(4) eap_ttls: >>> send TLS 1.2  [length 0001]
+(4) eap_ttls: TLS_accept: SSLv3 write change cipher spec A
+(4) eap_ttls: >>> send TLS 1.2  [length 0010]
+(4) eap_ttls: TLS_accept: SSLv3 write finished A
+(4) eap_ttls: TLS_accept: SSLv3 flush data
+(4) eap_ttls: (other): SSL negotiation finished successfully
+(4) eap_ttls: SSL Connection Established
+(4) eap_ttls: [eaptls process] = handled
+(5) Received Access-Request Id 5 from 172.22.0.1:58686 to 172.22.0.4:1812 length 228
+(5) eap: Calling submodule eap_ttls to process data
+(5) eap_ttls: Authenticate
+(5) eap_ttls: Continuing EAP-TLS
+(5) eap_ttls: [eaptls verify] = ok
+(5) eap_ttls: Done initial handshake
+(5) eap_ttls: [eaptls process] = ok
+(5) eap_ttls: Session established.  Proceeding to decode tunneled attributes
+(5) eap_ttls: Got tunneled request
+(5) eap_ttls:   User-Name = "tknv@awas.lab"
+(5) eap_ttls:   User-Password = "symbol123"
+(5) eap_ttls:   FreeRADIUS-Proxied-To = 127.0.0.1
+(5) eap_ttls: Sending tunneled request
+(5) eap_ttls: Got tunneled Access-Accept
+(5) Sent Access-Accept Id 5 from 172.22.0.4:1812 to 172.22.0.1:58686 length 0
