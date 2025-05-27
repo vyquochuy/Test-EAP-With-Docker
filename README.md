@@ -1,7 +1,9 @@
 SOURCE FROM: https://github.com/tknv/docker-freeradius-eap-ttls
 
+This helps quick setup EAP TTLS for testing WPA2-Enterprise EAP TTLS. User authentication by ldap (LDAP TLS in TLS tunnel) FreeRadius service it. Configs for v3.0.x. Openldap service via ldaps/ldap. Configs for v1.5.0.
+
 ```bash
-docker-compose up --build
+docker-compose up --build -d
 docker-compose up 
 eapol_test -c ttls-pap.conf -s symbol123
 ```
