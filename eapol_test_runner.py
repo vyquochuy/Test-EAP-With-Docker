@@ -11,10 +11,10 @@ def measure_eap_phases(eapol_test_path, config_file, radius_ip, secret, timeout=
     
     handshake_time = None
     total_time = None
-    log_lines = []
+    client_log = []
 
     for line in proc.stdout:
-        log_lines.append(line)
+        client_log.append(line)
         # Look for TLS handshake completion
         if 'Handshake finished' in line or 'TLS done' in line:
             handshake_time = time.time() - start_time
@@ -32,35 +32,46 @@ def measure_eap_phases(eapol_test_path, config_file, radius_ip, secret, timeout=
         os.makedirs(log_dir)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file = os.path.join(log_dir, f"eap_test_log_{timestamp}.txt")
+    client = os.path.join(log_dir, f"client_log_{timestamp}.txt")
+    server = os.path.join(log_dir, f"server_log_{timestamp}.txt")
 
-    with open (log_file, 'w') as f:
+    important_keywords = [
+        'eap_ttls', 'eap_tls', 'EAP-Request-TTLS',
+        'ERROR', 'Access-Request', 'Access-Accept', 'Access-Reject',
+        'EAPOL: SUPP_PAE entering state', 'EAPOL: SUPP_BE entering state',
+        'EAP authentication completed',' EAP: EAP entering state',
+        'EAP-Response','EAP-Request','Handshake',
+        'SUCCESS','FAILURE','timeout'
+    ]
+    with open (client, 'a') as f:
         # Summarize metrics
         f.write(f"Start Time: {datetime.fromtimestamp(start_time)}\n")
         if handshake_time:
             f.write(f"Handshake Time: {handshake_time:.2f} seconds\n")
-        f.write(f"Total Authentication Time: {total_time:.2f} seconds\n")
-        f.write("\nKey Log Snippets:\n\n")
+            f.write(f"Total Authentication Time: {total_time:.2f} seconds\n")
+            f.write("\nKey Log Snippets:\n\n")
 
-        important_keywords = [
-            'EAPOL: SUPP_PAE entering state',
-            'EAPOL: SUPP_BE entering state',
-            'EAP authentication completed',
-            'EAP: EAP entering state',
-            'EAP-Response',
-            'EAP-Request',
-            'Handshake',
-            'SUCCESS',
-            'FAILURE',
-            'timeout'
-        ]
-
-        for line in log_lines:
+        for line in client_log:
             if any(keyword in line for keyword in important_keywords):
                 f.write(line.strip() + "\n")
 
+    try:
+        server_cmd = ["docker", "logs", "radius-eap-ttls"]
+        srv = subprocess.run(server_cmd, capture_output=True, text=True, check=True)
+        server_log = srv.stdout.splitlines()
+    except Exception:
+        server_log = "(Failed to fetch docker logs for 'radius-eap-ttls')\n"
 
+    with open(server, 'w') as f:
+        f.write("=== FreeRADIUS Server Log (radius-eap-ttls) ===\n")
 
+        for line in server_log:
+            if any(keyword in line for keyword in important_keywords):
+                f.write(line.strip() + "\n")
+
+    print(f"Logs saved to {"eap_logs"}")
+
+    
 
 if __name__ == "__main__":
     measure_eap_phases(
