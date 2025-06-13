@@ -1,0 +1,62 @@
+Start Time: 2025-05-27 22:39:32.488921
+Handshake Time: 0.14 seconds
+Total Authentication Time: 0.14 seconds
+
+Key Log Snippets:
+
+EAPOL: SUPP_PAE entering state DISCONNECTED
+EAPOL: SUPP_BE entering state INITIALIZE
+EAPOL: SUPP_PAE entering state CONNECTING
+EAPOL: SUPP_BE entering state IDLE
+Sending fake EAP-Request-Identity
+EAPOL: SUPP_PAE entering state RESTART
+EAPOL: SUPP_PAE entering state AUTHENTICATING
+EAPOL: SUPP_BE entering state REQUEST
+EAP: Received EAP-Request id=56 method=1 vendor=0 vendorMethod=0
+EAP: EAP-Request Identity data - hexdump_ascii(len=0):
+EAPOL: SUPP_BE entering state RESPONSE
+Learned identity from EAP-Response-Identity - hexdump(len=18): 61 6e 6f 6e 79 6d 6f 75 73 40 61 77 61 73 2e 6c 61 62
+RADIUS message: code=1 (Access-Request) identifier=0 length=150
+EAPOL: SUPP_BE entering state RECEIVE
+decapsulated EAP packet (code=1 id=57 len=6) from RADIUS server: EAP-Request-TTLS (21)
+EAPOL: SUPP_BE entering state REQUEST
+EAP: Received EAP-Request id=57 method=21 vendor=0 vendorMethod=0
+EAPOL: SUPP_BE entering state RESPONSE
+RADIUS message: code=1 (Access-Request) identifier=1 length=335
+EAPOL: SUPP_BE entering state RECEIVE
+decapsulated EAP packet (code=1 id=58 len=1024) from RADIUS server: EAP-Request-TTLS (21)
+EAPOL: SUPP_BE entering state REQUEST
+EAP: Received EAP-Request id=58 method=21 vendor=0 vendorMethod=0
+EAPOL: SUPP_BE entering state RESPONSE
+RADIUS message: code=1 (Access-Request) identifier=2 length=151
+EAPOL: SUPP_BE entering state RECEIVE
+decapsulated EAP packet (code=1 id=59 len=1024) from RADIUS server: EAP-Request-TTLS (21)
+EAPOL: SUPP_BE entering state REQUEST
+EAP: Received EAP-Request id=59 method=21 vendor=0 vendorMethod=0
+EAPOL: SUPP_BE entering state RESPONSE
+RADIUS message: code=1 (Access-Request) identifier=3 length=151
+EAPOL: SUPP_BE entering state RECEIVE
+decapsulated EAP packet (code=1 id=60 len=141) from RADIUS server: EAP-Request-TTLS (21)
+EAPOL: SUPP_BE entering state REQUEST
+EAP: Received EAP-Request id=60 method=21 vendor=0 vendorMethod=0
+EAPOL: SUPP_BE entering state RESPONSE
+RADIUS message: code=1 (Access-Request) identifier=4 length=309
+EAPOL: SUPP_BE entering state RECEIVE
+decapsulated EAP packet (code=1 id=61 len=61) from RADIUS server: EAP-Request-TTLS (21)
+EAPOL: SUPP_BE entering state REQUEST
+EAP: Received EAP-Request id=61 method=21 vendor=0 vendorMethod=0
+OpenSSL: Handshake finished - resumed=0
+EAP-TTLS: empty data in beginning of Phase 2 - use fake EAP-Request Identity
+EAPOL: SUPP_BE entering state RESPONSE
+RADIUS message: code=1 (Access-Request) identifier=5 length=228
+EAPOL: SUPP_BE entering state RECEIVE
+RADIUS message: code=2 (Access-Accept) identifier=5 length=180
+EAPOL: SUPP_BE entering state REQUEST
+EAP: EAP entering state SUCCESS
+CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+Cancelling authentication timeout
+EAPOL: SUPP_PAE entering state AUTHENTICATED
+EAPOL: SUPP_BE entering state RECEIVE
+EAPOL: SUPP_BE entering state SUCCESS
+EAPOL: SUPP_BE entering state IDLE
+SUCCESS

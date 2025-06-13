@@ -1,0 +1,15 @@
+dn: uid=tknv,dc=awas,dc=lab
+changetype: add
+uid: tknv
+cn: tknv
+sn: wha
+objectClass: top
+objectClass: posixAccount
+objectClass: inetOrgPerson
+loginShell: /bin/bash
+homeDirectory: /home/tknv
+uidNumber: 14583102
+gidNumber: 14564100
+userPassword: {SSHA}dAXF4vbYV2EV210v8Bt2SkYNsV3QaPjL
+mail: tknv@awas.lab
+gecos: tknv;123-456;room 5
